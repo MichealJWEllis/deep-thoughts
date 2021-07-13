@@ -6,6 +6,8 @@ import Auth from '../utils/auth';
 import { Redirect, useParams } from 'react-router-dom';
 import { ADD_FRIEND } from '../utils/mutations';
 import { useQuery, useMutation } from '@apollo/client';
+import ThoughtForm from '../components/ThoughtForm';
+
 
 const Profile = () => {
   const [addFriend] = useMutation(ADD_FRIEND);
@@ -70,6 +72,7 @@ const Profile = () => {
           />
         </div>
       </div>
+      <div className="mb-3">{!userParam && <ThoughtForm />}</div>
     </div>
   );
 };
